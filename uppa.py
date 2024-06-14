@@ -31,7 +31,7 @@ def get_unsplash_photos(username, access_key):
             'per_page': per_page,
             'stats': 'true'
         }
-        response = requests.get(url, params=params)
+        response = requests.get(url, params=params, timeout=5)
         if response.status_code != 200:
             print(f"Error: {response.status_code}")
             break
