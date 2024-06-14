@@ -1,6 +1,7 @@
 """Fetch photos from Unsplash API, calculate performance scores, display the results."""
 import os
 import json
+import sys
 import requests
 import numpy as np
 import matplotlib.pyplot as plt
@@ -12,7 +13,7 @@ USERNAME = os.getenv('UNSPLASH_USERNAME')
 # Check if ACCESS_KEY and USERNAME are set
 if not ACCESS_KEY or not USERNAME:
     print("Please set the UNSPLASH_ACCESS_KEY and UNSPLASH_USERNAME environment variables.")
-    exit()
+    sys.exit(1)
 
 PHOTOS_FILENAME = 'photos.json'
 
@@ -66,7 +67,7 @@ else:
     photos = get_unsplash_photos(USERNAME, ACCESS_KEY)
     if not photos:
         print("No photos retrieved. Please check your username and access key.")
-        exit()
+        sys.exit(1)
     save_photos_to_file(photos, PHOTOS_FILENAME)
     print("Fetched photos from Unsplash API and saved to photos.json")
 
