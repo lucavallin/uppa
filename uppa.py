@@ -120,8 +120,7 @@ for photo in sorted_photos:
     views = photo['statistics']['views']['total']
     downloads = photo['statistics']['downloads']['total']
     normalized_score = photo['normalized_score']
-    print(f"Photo URL: https://unsplash.com/photos/{photo_id}, Days Online: {days_online}, Views: {
-          views}, Downloads: {downloads}, Normalized Score: {normalized_score:.2f}")
+    print(f"Photo URL: https://unsplash.com/photos/{photo_id}, Days Online: {days_online}, Views: {views}, Downloads: {downloads}, Normalized Score: {normalized_score:.2f}")
 
 # Generate a bar chart
 photo_ids = [photo['id'] for photo in sorted_photos]
